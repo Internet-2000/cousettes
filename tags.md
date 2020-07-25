@@ -12,4 +12,6 @@ permalink: 'tags/{{generatedTags | slug}}/'
 
 Test content for this tag
 
+{% include tags, tag: generatedTags %}
+
 

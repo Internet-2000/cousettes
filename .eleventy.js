@@ -1,17 +1,20 @@
 module.exports = function(eleventyConfig) {
-  // // filters
-  // eleventyConfig.addFilter('removePaginated', function(items) {
-  //   return items
-  //     .filter(item => !item.data.pagination || !item.data.pagination.previous)
-  // })
+eleventyConfig.addFilter('tagFilter', function(collection, category) {
+  if (!category) return collection;
+    const filtered = collection.filter(item => item.data.tags.includes(category))
+    return filtered;
+});
+
   // collections
   eleventyConfig.addCollection('generatedPages', function(collectionApi) {
     return collectionApi.getFilteredByTag('page')
       .filter(item => !item.data.pagination || !item.data.pagination.previous)
   })
   eleventyConfig.addCollection('generatedTags', function(collectionApi) {
-    return collectionApi.getFilteredByTag('product')
+    const tags = collectionApi.getFilteredByTag('product')
       .flatMap(item => item.data.tags.filter(tag => tag !== 'product'))
+    // remove duplicates using Set
+    return [...new Set(tags)]
   })
   // copy folders
   eleventyConfig.addPassthroughCopy('assets')

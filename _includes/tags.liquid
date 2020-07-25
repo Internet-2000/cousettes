@@ -1,7 +1,6 @@
-<ul>
-  {% assign items = collections.generatedTags %}
-  {%- for item in items -%}
-    <li><a href="{{ site.url }}{{ site.baseurl }}/tags/{{ item | slug }}">{{ item }}</a></li>
-  {%- endfor -%}
-</ul>
-
+<ol>
+{% assign items = collections.product | tagFilter: tag %}
+{%- for item in items %}
+  <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url | url }}">{{ item.data.title }}</a></li>
+{% endfor -%}
+</ol>
