@@ -7,8 +7,8 @@
     "node": ">=0.12"
   },
   "scripts": {
-    "start": "eleventy --serve",
-    "start:debug": "DEBUG=Eleventy* eleventy --serve",
+    "start": "LOCAL=true eleventy --serve",
+    "start:debug": "DEBUG=Eleventy* npm start",
     "build": "eleventy"
   },
   "author": "",
