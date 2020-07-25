@@ -1,0 +1,7 @@
+<ul>
+  {% assign items = collections.generatedTags %}
+  {%- for item in items -%}
+    <li><a href="../tags/{{ item | slug }}">{{ item }}</a></li>
+  {%- endfor -%}
+</ul>
+
