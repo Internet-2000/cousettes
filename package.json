@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines" : { "node" : ">=0.12" },
+  "engines": {
+    "node": ">=0.12"
+  },
   "scripts": {
     "start": "eleventy --serve",
     "start:debug": "DEBUG=Eleventy* eleventy --serve",
