@@ -1,6 +1,6 @@
 <ol>
 {%- for item in product %}
-  <li><a href="{{ item.url | url }}">{{ item.data.title }}</a></li>
+  <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url | url }}">{{ item.data.title }}</a></li>
 {% endfor -%}
 </ol>
 
