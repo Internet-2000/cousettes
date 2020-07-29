@@ -1,17 +1,7 @@
 ---
-layout: default
-title: tag page
-pagination:
-  data: collections.generatedTags
-  size: 1
-  alias: generatedTags
-permalink: 'tags/{{generatedTags | slug}}/'
+layout: tags
+title: all tags page
+tags:
+- page
 ---
-
-# {{generatedTags}}
-
-Test content for this tag
-
-{% include tags, tag: generatedTags %}
-
 

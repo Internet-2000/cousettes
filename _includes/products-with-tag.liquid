@@ -1,0 +1,6 @@
+<ol>
+{% assign items = collections.product | tagFilter: _tag %}
+{%- for item in items %}
+  <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url | url }}">{{ item.data.title }}</a></li>
+{% endfor -%}
+</ol>

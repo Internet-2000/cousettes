@@ -1,6 +1,12 @@
 <ol>
-{% assign items = collections.product | tagFilter: tag %}
-{%- for item in items %}
-  <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url | url }}">{{ item.data.title }}</a></li>
-{% endfor -%}
+  {% if _tags %}
+    {%- for tag in _tags %}
+    <li>
+      <a href="{{ site.url }}{{ site.baseurl }}/tags/{{ tag | slug }}">{{ tag }}</a>
+    </li>
+    {% endfor -%}
+  {% else %}
+    Error: `_tags` not defined
+  {% endif %}
 </ol>
+

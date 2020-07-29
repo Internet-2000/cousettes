@@ -6,7 +6,7 @@ eleventyConfig.addFilter('tagFilter', function(collection, category) {
 });
 
   // collections
-  eleventyConfig.addCollection('generatedPages', function(collectionApi) {
+  eleventyConfig.addCollection('generatedPages', async function(collectionApi) {
     return collectionApi.getFilteredByTag('page')
       .filter(item => !item.data.pagination || !item.data.pagination.previous)
   })

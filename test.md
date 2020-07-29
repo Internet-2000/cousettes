@@ -1,7 +1,5 @@
 ---
 layout: test
-tags:
-- page
 title: test
 pagination:
   data: collections.product
