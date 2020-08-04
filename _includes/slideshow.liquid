@@ -1,0 +1,30 @@
+<script src="/js/splide.min.js"></script>
+<link rel="stylesheet" href="/css/splide.min.css">
+
+
+<div class="splide slideshow">
+	<div class="splide__track">
+		<ul class="splide__list">
+      {%- for item in images %}
+      <li class="splide__slide">
+        <img src="{{ site.url }}{{ site.baseurl }}{{ item | url }}" title="TITLE" alt="ALT" />
+      </li>
+      {% endfor -%}
+		</ul>
+	</div>
+</div>
+<script>
+  new Splide('.splide', {
+    type     : 'loop',
+    autoWidth: true,
+    focus    : 'center',
+  }).mount();
+</script>
+
+<style>
+.splide, .splide__track, .splide__list, .splide__slide {
+    width: inherit;
+    height: inherit;
+    min-height: inherit;
+  }
+</style>
