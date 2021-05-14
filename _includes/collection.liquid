@@ -1,7 +1,14 @@
 {% comment %}
+
 Inputs: 
+
 - items: collection to display, defaults to "collectoins.page"
 - category: display pages with this category only, defaults to "no filter"
+
+Usage:
+
+All Products: {% include collection, items: collections.product %}
+
 {% endcomment %}
 <ul>
   {% assign _items = items | default: collections.page %}

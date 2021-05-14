@@ -1,7 +1,7 @@
 const site =  require('./_data/site.js')
 
 module.exports = function(eleventyConfig) {
-  // filters
+  // collections
   eleventyConfig.addCollection('categories', function(collectionApi) {
     const tags = collectionApi.getAll()
       .flatMap(item => item.data.categories)
