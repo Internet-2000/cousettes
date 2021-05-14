@@ -2,9 +2,7 @@
 layout: home
 permalink: /
 title: home
-tags:
-- page
-- home
+
 ---
 
 # test 1

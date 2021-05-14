@@ -1,9 +1,9 @@
 ---
 title: Product 1
-tags:
-- product
+categories:
 - fringues
 - demo
+
 ---
 
 # Product 1

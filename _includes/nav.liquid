@@ -1,7 +1,0 @@
-<ul>
-  {% assign items = collections.generatedPages %}
-  {%- for item in items -%}
-  <li><a href="{{ site.url }}{{ site.baseurl }}{{ item.url }}">{{ item.data.title }}</a></li>
-  {%- endfor -%}
-</ul>
-

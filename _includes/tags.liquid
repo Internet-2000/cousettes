@@ -1,12 +1,14 @@
+{% comment %}
+Inputs:
+- filter: a category
+{% endcomment %}
 <ol>
-  {% if _tags %}
-    {%- for tag in _tags %}
-    <li>
-      <a href="{{ site.url }}{{ site.baseurl }}/tags/{{ tag | slug }}">{{ tag }}</a>
-    </li>
-    {% endfor -%}
-  {% else %}
-    Error: `_tags` not defined
-  {% endif %}
+  {%- for tag in collections.categories %}
+    {% if filter == undefined or filter contains tag %}
+      <li>
+        <a href="{{ site.url }}{{ site.baseurl }}/tags/{{ tag | slug }}">{{ tag }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ol>
 

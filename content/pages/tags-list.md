@@ -1,12 +1,12 @@
 ---
 layout: tag
 pagination:
-  data: collections.generatedTags
+  data: collections.categories
   size: 1
-  alias: generatedTags
-permalink: 'tags/{{generatedTags | slug}}/'
+  alias: tag
+permalink: '/tags/{{pagination.items[0] | slug}}/'
+eleventyExcludeFromCollections: true
+
 ---
 
-{% include products-with-tag, _tag: generatedTags %}
-
-
+tags-list.md
