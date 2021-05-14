@@ -1,12 +1,12 @@
 ---
-title: Démo 2
+title: Product 1
 tags:
 - product
-- demo
 - fringues
+- demo
 ---
 
-# Démo 2
+# Product 1
 
 Ceci n'est pas une démo
 

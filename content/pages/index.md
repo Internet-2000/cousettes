@@ -1,5 +1,6 @@
 ---
 layout: home
+permalink: /
 title: home
 tags:
 - page

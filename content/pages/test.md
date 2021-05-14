@@ -1,6 +1,7 @@
 ---
 layout: test
 title: test
+tags: [page]
 pagination:
   data: collections.product
   size: 2

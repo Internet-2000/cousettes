@@ -1,9 +1,9 @@
 module.exports = function(eleventyConfig) {
-eleventyConfig.addFilter('tagFilter', function(collection, category) {
-  if (!category) return collection;
-    const filtered = collection.filter(item => item.data.tags.includes(category))
-    return filtered;
-});
+  eleventyConfig.addFilter('tagFilter', function(collection, category) {
+    if (!category) return collection;
+      const filtered = collection.filter(item => item.data.tags.includes(category))
+      return filtered;
+  });
 
   // collections
   eleventyConfig.addCollection('generatedPages', async function(collectionApi) {
@@ -21,10 +21,23 @@ eleventyConfig.addFilter('tagFilter', function(collection, category) {
     'node_modules/@splidejs/splide/dist/js': 'js',
     'node_modules/@splidejs/splide/dist/css': 'css',
   })
+  const sitemap = require("@quasibit/eleventy-plugin-sitemap")
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: site.url + site.baseurl,
+    },
+  })
   // copy folders
   eleventyConfig.addPassthroughCopy('assets')
+  eleventyConfig.addPassthroughCopy('uploads')
+  eleventyConfig.addPassthroughCopy('images')
   eleventyConfig.addPassthroughCopy('css/*.css')
+  eleventyConfig.addPassthroughCopy('css/*.jpg') // favicon
+  eleventyConfig.addPassthroughCopy('css/*.png') // favicon
+  eleventyConfig.addPassthroughCopy('css/*.ico') // favicon
   eleventyConfig.addPassthroughCopy('js')
+  eleventyConfig.addPassthroughCopy('CNAME')
+
   // other config
   return {
     dir: {

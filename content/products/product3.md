@@ -1,5 +1,5 @@
 ---
-title: Chaussure
+title: Product 3
 tags:
 - product
 - fringues
@@ -11,7 +11,7 @@ images:
 - /assets/3_s.jpg
 ---
 
-# Chaussure
+# Product 3
 
 Ceci n'est pas une chaussure
 
