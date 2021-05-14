@@ -8,6 +8,11 @@ Tools we use
 * [snipcart e-commerce](https://snipcart.com/)
 * github pages and github actions
 
+todo
+
+* BASE_URL should start with a `/`
+* config editable.html with 11ty
+
 ## host on github pages
 
 [This repository](https://github.com/lexoyo/11ty-boilerplate) is a template you can use to create a site with [11ty](https://11ty.dev) and [Silex website builder](https://www.silex.me)
@@ -19,7 +24,7 @@ Here is how to start:
 1. Fork [this repository](https://github.com/lexoyo/11ty-boilerplate) or click "use this template" (/!\ be sure to select "Include all branches")
 1. Create a [deploy token here](https://github.com/settings/tokens) with the access write `public_repo`
 1. [In the settings of the website, "secret" section, create a new secret](./settings/secrets/actions/new), call it `DEPLOY_TOKEN` and paste the token as its value 
-1. [In the settings of the website, "secret" section, create a new secret](./settings/secrets/actions/new), call it `BASE_URL` and set its value to the name of your repository (e.g. `11ty-boilerplate`)
+1. [In the settings of the website, "secret" section, create a new secret](./settings/secrets/actions/new), call it `BASE_URL` and set its value to the name of your repository prepended with a `/` (e.g. `/11ty-boilerplate`)
 1. Create a website with [Stastic designer](https://design.stastic.net/)
 1. Publish your site from Stastic designer to github as 11ty layout
 1. Create a file like [test.md](./test.md), add `layout: YOUR PAGE NAME IN STASTIC`
@@ -27,8 +32,9 @@ Here is how to start:
 
 ## local installation
 
+Check the minimum version of node in [.nvmrc](./.nvmrc) or use `nvm i`
+
 ```
-$ nvm i
 $ npm i
 $ npm run build
 ```
@@ -38,7 +44,7 @@ $ npm run build
 Useful env vars on the build server
 
 * `URL` optional website URL
-* `BASE_URL` optional base url
+* `BASE_URL` optional base url, when defined it should start with a `/`
 * `DEPLOY_TOKEN` for deployment to branch `gh-pages`
 
 ## edit templates
