@@ -1,0 +1,81 @@
+<h1>i2k static starter</h1>
+<p>Tools we use</p>
+<ul>
+<li><a href="https://www.11ty.dev/">11ty static site generator</a></li>
+<li><a href="https://www.silex.me">Silex website builder</a></li>
+<li><a href="https://forestry.io/">forestry headless CMS</a></li>
+<li><a href="https://snipcart.com/">snipcart e-commerce</a></li>
+<li>github pages and github actions</li>
+</ul>
+<p>todo</p>
+<ul>
+<li>[ ] BASE_URL should start with a <code>/</code></li>
+<li>[ ] config editable.html with 11ty</li>
+<li>[ ] remove <code>_includes/tags.liquid</code> because it can be done with <code>collection</code></li>
+<li>[ ] responsive images</li>
+</ul>
+<h2>starter config</h2>
+<p>In this repo I have setup by default</p>
+<ul>
+<li>11ty</li>
+<li>Forestry</li>
+<li>Silex</li>
+</ul>
+<h3>11ty</h3>
+<p>These plugins are preconfigured:</p>
+<ul>
+<li><a href="https://github.com/quasibit/eleventy-plugin-sitemap">sitemap</a></li>
+<li><a href="https://splidejs.com/">splide</a> (slideshow)</li>
+</ul>
+<p>Here are the available collections:</p>
+<ul>
+<li><code>collections.page</code> which take the content of <code>content/pages</code></li>
+<li><code>collections.post</code> which take the content of <code>content/posts</code></li>
+<li><code>collections.product</code> which take the content of <code>content/products</code></li>
+<li><code>collections.categories</code> which is an array of all the categories found in all your posts and pages and products (<a href="./content/posts/2018-01-01-post1.md">e.g. the categories in this post</a>)</li>
+</ul>
+<p>Here are the available includes:</p>
+<ul>
+<li><code>collection</code>: display a list of links, to posts, categories or other collection, this will be useful for navigation and tag cloud, <a href="./_includes/collection.liquid">see the comment here</a></li>
+<li><code>pagination</code>: to be documented</li>
+<li><code>slideshow</code>: insert a slideshow which shows the images of the <code>images</code> key in the page front matter, <a href="./_includes/slideshow.liquid">see the comment here</a></li>
+<li><code>image</code>: display an image, <a href="./_includes/image.liquid">see the comment here</a></li>
+<li><code>tags</code>: insert a list of page/post/product filtered by category, <a href="./_includes/tags.liquid">see the comment here</a></li>
+</ul>
+<h3>Forestry</h3>
+<p>Import this repo in forestry and you will be able to edit pages, posts and products</p>
+<h2>host on github pages</h2>
+<p><a href="https://github.com/lexoyo/11ty-boilerplate">This repository</a> is a template you can use to create a site with <a href="https://11ty.dev">11ty</a> and <a href="https://www.silex.me">Silex website builder</a></p>
+<p>It conains an action to deploy on github pages automatically</p>
+<p>Here is how to start:</p>
+<ol>
+<li>Fork <a href="https://github.com/lexoyo/11ty-boilerplate">this repository</a> or click &quot;use this template&quot; (/!\ be sure to select &quot;Include all branches&quot;)</li>
+<li>Create a <a href="https://github.com/settings/tokens">deploy token here</a> with the access write <code>public_repo</code></li>
+<li><a href="./settings/secrets/actions/new">In the settings of the website, &quot;secret&quot; section, create a new secret</a>, call it <code>DEPLOY_TOKEN</code> and paste the token as its value</li>
+<li><a href="./settings/secrets/actions/new">In the settings of the website, &quot;secret&quot; section, create a new secret</a>, call it <code>BASE_URL</code> and set its value to the name of your repository prepended with a <code>/</code> (e.g. <code>/11ty-boilerplate</code>)</li>
+<li>Create a website with <a href="https://design.stastic.net/">Stastic designer</a></li>
+<li>Publish your site from Stastic designer to github as 11ty layout</li>
+<li>Create a file like <a href="./test.md">test.md</a>, add <code>layout: YOUR PAGE NAME IN STASTIC</code></li>
+</ol>
+<h2>local installation</h2>
+<p>Check the minimum version of node in <a href="./.nvmrc">.nvmrc</a> or use <code>nvm i</code></p>
+<pre><code>$ npm i
+$ npm run build
+</code></pre>
+<h2>build and deploy</h2>
+<p>Useful env vars on the build server</p>
+<ul>
+<li><code>URL</code> optional website URL</li>
+<li><code>BASE_URL</code> optional base url, when defined it should start with a <code>/</code></li>
+<li><code>DEPLOY_TOKEN</code> for deployment to branch <code>gh-pages</code></li>
+</ul>
+<h2>edit templates</h2>
+<p>Use the &quot;stastic&quot; fork of Silex which contains the 11ty components by default</p>
+<p>Links:</p>
+<ul>
+<li>stastic latest version is <a href="https://design.stastic.net/">available online here</a></li>
+<li><a href="https://github.com/lexoyo/stastic-designer">stastic source code</a></li>
+<li><a href="https://github.com/silexlabs/Silex/wiki/">Silex documentation</a></li>
+<li><a href="https://github.com/silexlabs/Silex/issues/">Silex forums to ask for help</a></li>
+</ul>
+<p>In case the latest version will not work as expected, the version of stastic used for this website is <a href="https://github.com/lexoyo/stastic-designer/releases/tag/v2.7.12">v2.7.13 which can be downloaded here</a>. There is a downloadable app to work offline with your local files, or you can host it somewhere (nodejs) to work with github files.</p>
