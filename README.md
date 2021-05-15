@@ -13,6 +13,7 @@ todo
 * [ ] BASE_URL should start with a `/`
 * [ ] config editable.html with 11ty
 * [ ] remove `_includes/tags.liquid` because it can be done with `collection`
+* [ ] responsive images
 
 ## starter config
 
@@ -41,6 +42,7 @@ Here are the available includes:
 * `collection`: display a list of links, to posts, categories or other collection, this will be useful for navigation and tag cloud, [see the comment here](./_includes/collection.liquid)
 * `pagination`: to be documented
 * `slideshow`: insert a slideshow which shows the images of the `images` key in the page front matter, [see the comment here](./_includes/slideshow.liquid)
+* `image`: display an image, [see the comment here](./_includes/image.liquid)
 * `tags`: insert a list of page/post/product filtered by category, [see the comment here](./_includes/tags.liquid)
 
 ### Forestry
